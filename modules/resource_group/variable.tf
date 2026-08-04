@@ -1,3 +1,3 @@
-variable "rg_sunu1" {
+variable "resource_group" {
   
 }

@@ -1,1 +1,1 @@
-variable "somya1" {}
+variable "resource_group" {}

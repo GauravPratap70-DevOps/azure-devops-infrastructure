@@ -13,3 +13,11 @@ variable "subnet1" {
 variable "nsg1" {
   
 }
+
+variable "public_ip1" {
+  
+}
+
+variable "nic1" {
+  
+}

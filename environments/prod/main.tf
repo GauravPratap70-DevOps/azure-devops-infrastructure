@@ -27,3 +27,27 @@ module "network_security_group" {
 
   nsg = var.nsg1
 }
+
+module "public_ip" {
+
+  source = "../../modules/public_ip"
+
+  public_ip = var.public_ip1
+}
+
+module "network_interface" {
+
+  source = "../../modules/network_interface"
+
+  nic = {
+    vm_nic = {
+
+      name                          = "prod-vm-nic"
+      location                      = "Central India"
+      resource_group_name           = "prod-rg"
+      ip_configuration_name         = "internal"
+      subnet_id                     = module.subnet.subnet_id["subnet01"]
+      private_ip_address_allocation = "Dynamic"
+    }
+  }
+}

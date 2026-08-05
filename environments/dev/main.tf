@@ -33,3 +33,20 @@ module "public_ip" {
 
   public_ip = var.public_ip1
 }
+
+module "network_interface" {
+
+  source = "../../modules/network_interface"
+
+  nic = {
+    vm_nic = {
+
+      name                          = "dev-vm-nic"
+      location                      = "Central India"
+      resource_group_name           = "Dev-rg"
+      ip_configuration_name         = "internal"
+      subnet_id                     = module.subnet.subnet_id["subnet01"]
+      private_ip_address_allocation = "Dynamic"
+    }
+  }
+}

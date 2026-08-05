@@ -1,1 +1,7 @@
-variable "somya1" {}
+variable "resource_group" {
+  
+}
+
+variable "virtual_net1" {
+  
+}

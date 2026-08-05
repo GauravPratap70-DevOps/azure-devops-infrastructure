@@ -1,1 +1,11 @@
-variable "resource_group" {}
+variable "resource_group" {
+  
+}
+
+variable "virtual_net1" {
+  
+}
+
+variable "subnet1" {
+  
+}

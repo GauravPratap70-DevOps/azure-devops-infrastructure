@@ -19,3 +19,10 @@ module "subnet" {
 
   subnet = var.subnet1
 }
+
+module "network_security_group" {
+
+  source = "../../modules/network_security_group"
+
+  nsg = var.nsg1
+}

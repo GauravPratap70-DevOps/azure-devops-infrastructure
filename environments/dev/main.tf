@@ -26,3 +26,10 @@ module "network_security_group" {
 
   nsg = var.nsg1
 }
+
+module "public_ip" {
+
+  source = "../../modules/public_ip"
+
+  public_ip = var.public_ip1
+}

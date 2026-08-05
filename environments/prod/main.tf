@@ -63,3 +63,30 @@ module "virtual_machine" {
     })
   }
 }
+
+module "virtual_machine" {
+
+  source = "../../modules/virtual_machine"
+
+  vm = {
+    for key, value in var.vm1 :
+    key => merge(value, {
+      network_interface_id = module.network_interface.nic_id["vm_nic"]
+    })
+  }
+}
+
+
+module "bastion" {
+
+  source = "../../modules/bastion"
+
+  bastion = {
+    for key, value in var.bastion1 :
+    key => merge(value, {
+      subnet_id = module.subnet.subnet_id["bastion_subnet"]
+
+      public_ip_address_id = module.public_ip.public_ip_id["dev_bastion_pip"]
+    })
+  }
+}

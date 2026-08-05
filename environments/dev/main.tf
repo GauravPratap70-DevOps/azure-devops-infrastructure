@@ -62,3 +62,19 @@ module "virtual_machine" {
     })
   }
 }
+
+
+module "bastion" {
+
+  source = "../../modules/bastion"
+
+  bastion = {
+    for key, value in var.bastion1 :
+    key => merge(value, {
+      subnet_id = module.subnet.subnet_id["bastion_subnet"]
+
+      public_ip_address_id = module.public_ip.public_ip_id["dev_bastion_pip"]
+    })
+  }
+}
+

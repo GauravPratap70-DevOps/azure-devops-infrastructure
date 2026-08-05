@@ -25,3 +25,7 @@ variable "nic1" {
 variable "vm1" {
 
 }
+
+variable "bastion1" {
+
+}

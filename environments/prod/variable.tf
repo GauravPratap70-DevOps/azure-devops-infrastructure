@@ -21,3 +21,7 @@ variable "public_ip1" {
 variable "nic1" {
   
 }
+
+variable "vm1" {
+  
+}

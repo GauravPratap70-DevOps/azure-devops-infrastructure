@@ -51,3 +51,15 @@ module "network_interface" {
     }
   }
 }
+
+module "virtual_machine" {
+
+  source = "../../modules/virtual_machine"
+
+  vm = {
+    for key, value in var.vm1 :
+    key => merge(value, {
+      network_interface_id = module.network_interface.nic_id["vm_nic"]
+    })
+  }
+}

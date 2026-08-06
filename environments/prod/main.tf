@@ -90,3 +90,14 @@ module "bastion" {
     })
   }
 }
+
+module "network_security_rule" {
+
+  source = "../../modules/network_security_rule"
+
+  resource_group_name         = module.resource_group.rg_name["dev_rg"]
+
+  network_security_group_name = module.network_security_group.nsg_name["dev_nsg"]
+
+  nsg_rules = var.nsg_rules
+}

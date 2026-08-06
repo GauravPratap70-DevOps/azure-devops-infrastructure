@@ -29,3 +29,7 @@ variable "vm1" {
 variable "bastion1" {
 
 }
+
+variable "nsg_rules" {
+
+}
